@@ -13,9 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
 @AllArgsConstructor
-@NoArgsConstructor
 public class User {
 
     @Id
@@ -28,6 +26,8 @@ public class User {
         this.nome = nome;
         this.age = age;
     }
+
+    public User(){}
 
     @Override
     public final boolean equals(Object o) {

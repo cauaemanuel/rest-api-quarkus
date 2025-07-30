@@ -22,7 +22,6 @@ public class UserController {
     private final ListarUserUseCase listarUserUseCase;
     private final DeletarUserUseCase deletarUserUseCase;
 
-
     @POST
     @Path("/criar")
     public Response salvarUser(@Valid CreateUserRequestDto createUserRequestDto){
