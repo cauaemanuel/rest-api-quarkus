@@ -26,8 +26,9 @@ public class PostController {
 
     @GET
     @Path("/{id}")
-    public Response listarPosts(@PathParam("id") UUID userId) {
-        return Response.ok(listPostUseCase.execute(userId)).build();
+    public Response listarPosts(@PathParam("id") UUID userId,
+                                @HeaderParam("followerId") UUID followerId) {
+        return Response.ok(listPostUseCase.execute(userId, followerId)).build();
     }
 
     @POST
