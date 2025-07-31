@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -20,7 +21,10 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     public String nome;
-    public Integer age  ;
+    public Integer age;
+
+    @OneToMany(mappedBy = "follower", cascade = CascadeType.ALL)
+    private List<Follower> followers;
 
     public User(String nome, Integer age) {
         this.nome = nome;
